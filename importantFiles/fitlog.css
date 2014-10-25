@@ -1,0 +1,33 @@
+@font-face {
+  font-family: CtCambridge;
+  src: url('CtCambridge.ttf');
+}
+
+#AllText {
+  margin: 0px;
+  padding: 0px;
+  font-family: CtCambridge;
+  font-size: 50px;
+  color: #ffffff;
+}
+
+#entries {
+  list-style-type: none;
+}
+
+#entryZE {
+  margin: 2px;
+  padding: 2px;
+  font-family: CtCambridge;
+  font-size: 50px;
+  color: #ffffff;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+#entryON { 
+  margin: 2px;
+  padding: 2px;
+  font-family: CtCambridge;
+  font-size: 50px;
+  color: #ffffff;
+}
