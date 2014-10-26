@@ -51,16 +51,34 @@ app.get '/', (request, response) ->
 
 io.on 'connection', (socket) ->
   console.log 'Fit Log IV Client Connected'
-  redisClient.keys '*', (err, keys) ->
-    async.map keys, deliverKeyAndEntries, (err, result) ->
-      async.filter result, 
-        (item, next) ->
-          if item is 'EMPTY'
-            return next(false)
-          else
-            return next(true)
-        (resultOfFilter) ->
-          io.emit('fitnessEntry', resultOfFilter)
+
+  socket.on 'Food Content Request', (msg) ->
+    console.log 'Request for Content'
+    redisClient.keys '*', (err, keys) ->
+      async.map keys, deliverKeyAndEntries, (err, result) ->
+        async.filter result, 
+          (item, next) ->
+            if item is 'EMPTY'
+              return next(false)
+            else
+              return next(true)
+          (resultOfFilter) ->
+            io.emit('Food Content Entries', resultOfFilter)
+
+  socket.on 'Food Calories Request', (msg) ->
+    console.log 'Request for Calories'
+    redisClient.keys '*', (err, keys) ->
+      async.map keys, deliverKeyAndEntries, (err, result) ->
+        async.filter result, 
+          (item, next) ->
+            if item is 'EMPTY'
+              return next(false)
+            else
+              return next(true)
+          (resultOfFilter) ->
+            io.emit('Food Calories Entries', resultOfFilter)
+
+
 
 portNumber = 3001
 

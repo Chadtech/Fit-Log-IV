@@ -21,7 +21,7 @@
   font-family: CtCambridge;
   font-size: 50px;
   color: #ffffff;
-  background: rgba(192, 192, 192, 0.5);
+  background: rgba(192, 192, 192, 0.25);
 }
 
 #entryON { 
@@ -30,4 +30,15 @@
   font-family: CtCambridge;
   font-size: 50px;
   color: #ffffff;
+}
+
+.button {
+  margin: 2px;
+  padding: 2px;
+  font-family: CtCambridge;
+  font-size: 50px;
+  color: #ffffff;
+  background: #3000D0;
+  border: none;
+  padding: 0px;
 }
