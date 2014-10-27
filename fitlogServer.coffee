@@ -80,7 +80,7 @@ io.on 'connection', (socket) ->
 
 
 
-portNumber = 3001
+portNumber = 3002
 
 http.listen portNumber, () ->
   console.log 'Listening on *: ' + portNumber.toString()
